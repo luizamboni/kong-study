@@ -1,0 +1,23 @@
+_format_version: "3.0"
+_transform: true
+
+services:
+  - name: httpbin
+    url: http://httpbin:80
+    routes:
+      - name: httpbin-route
+        paths:
+          - /httpbin
+        strip_path: true
+
+plugins:
+  - name: rate-limiting
+    service: httpbin
+    config:
+      minute: 60
+      policy: local
+
+consumers:
+  - username: demo-user
+    keyauth_credentials:
+      - key: demo-api-key

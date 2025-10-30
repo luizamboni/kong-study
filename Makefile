@@ -49,3 +49,6 @@ db-less-logs:
 
 call-db-less:
 	curl -i $(DB_LESS_PROXY_URL)/httpbin/get
+
+codex:
+	codex resume 019a32b9-6f19-7562-9a4a-b13bd4a5b07b
